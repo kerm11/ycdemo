@@ -35,7 +35,7 @@ public class Cookie {
 	}
 
 	public int getMaxAge() {
-		System.out.println("====张三的代码====");
+		System.out.println("=====李四的代码===");
 		return maxAge;
 	}
 
