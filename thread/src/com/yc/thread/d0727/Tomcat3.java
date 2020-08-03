@@ -35,18 +35,19 @@ public class Tomcat3{
 							  * 解析出请求资源路径
 							 */
 							String[] lines = requestText.split("\\n");
-							String[] requestLines =lines[0].split("\\s");
+							String[] requestLines =lines[0].split("\\s");// GET /photo/index.html HTTP/1.1
 							String webpath =requestLines[1];
 							
 							String contentType;
 							//结果码
 							int statusCode = 200;
 							//定义磁盘文件路径
-							String path="F:\\software\\apache-tomcat-8.5.54\\webapps\\"+webpath;
+							String path="F:\\software\\apache-tomcat-8.5.54\\webapps"+webpath;
+							System.out.println(path);
 							File file = new File(path);
 							if(!file.exists()) {
 								statusCode=404;
-								path="F:\\software\\apache-tomcat-8.5.54\\webapps\\404.html";
+								path="F:\\software\\apache-tomcat-8.5.54\\webapps\\photo/404.html";
 							}
 							
 							if(webpath.endsWith(".js")) {
